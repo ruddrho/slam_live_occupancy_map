@@ -1,0 +1,2 @@
+GoalReached,CollisionDetected,MissionTime_s,TravelledDistance_m,PlannedPathLength_m,FinalGoalDistance_m,PathErrorRMSE_m,MaximumPathError_m,ReplanCount,AverageSpeed_mps,MinimumClearance_m
+1,0,100.8,20.5146314460141,21.9193374213278,0.258059936844282,0.0218526175952287,0.103718110425603,9,0.202745684403698,0.633556843104475
