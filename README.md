@@ -1,6 +1,6 @@
 <p align="center">
 
-<img src="results/navigation_dashboard.png" width="850">
+<img src="./project_preview.png" width="850">
 
 </p>
 
@@ -12,7 +12,7 @@ Hybrid LiDAR Navigation and Live Occupancy Mapping
 
 <p align="center">
 
-A MATLAB-based Autonomous Mobile Robot Navigation Framework
+A MATLAB-Based Autonomous Mobile Robot Navigation and SLAM Framework
 
 </p>
 
@@ -22,27 +22,30 @@ A MATLAB-based Autonomous Mobile Robot Navigation Framework
 ![MATLAB](https://img.shields.io/badge/MATLAB-R2020a+-orange)
 ![Robotics](https://img.shields.io/badge/Field-Autonomous%20Robotics-blue)
 ![SLAM](https://img.shields.io/badge/SLAM-Occupancy%20Mapping-green)
+![Control](https://img.shields.io/badge/Control-DWA%20Navigation-red)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 
 </p>
 
 
-
 # 🤖 Project Overview
 
 
-This project implements an autonomous mobile robot navigation framework combining:
+This project presents a complete autonomous mobile robot navigation framework developed in MATLAB.
 
-- Global path planning
-- Local motion control
-- LiDAR perception
+The system integrates:
+
+- A* global path planning
+- Dynamic Window Approach (DWA) local control
+- Differential-drive robot modelling
+- 360° LiDAR simulation
 - Odometry estimation
 - Scan matching
 - SLAM occupancy mapping
 - Navigation performance evaluation
 
 
-The objective is to develop a complete autonomous navigation pipeline similar to modern mobile robot systems.
+The objective is to develop a complete autonomous navigation pipeline similar to modern mobile robot systems used in robotics research.
 
 
 ---
@@ -51,49 +54,49 @@ The objective is to develop a complete autonomous navigation pipeline similar to
 
 
 ```
-                 Goal Position
+                    Goal Position
 
-                      |
+                         |
 
-                      ↓
+                         ↓
 
-              A* Global Planner
+                  A* Global Planner
 
-                      |
+                         |
 
-                      ↓
+                         ↓
 
-             Path Processing
+                  Path Processing
 
-                      |
+                         |
 
-                      ↓
+                         ↓
 
-        Dynamic Window Approach (DWA)
+          Dynamic Window Approach (DWA)
 
-                      |
+                         |
 
-                      ↓
+                         ↓
 
-          Differential Drive Robot
+             Differential Drive Robot
 
-          ------------------------
+             ------------------------
 
-          |                      |
+             |                      |
 
-        LiDAR                Odometry
+           LiDAR               Odometry
 
-          |                      |
+             |                      |
 
-          ↓                      ↓
+             ↓                      ↓
 
-       Scan Matching -------- SLAM
+        Scan Matching -------- SLAM
 
-                      |
+                         |
 
-                      ↓
+                         ↓
 
-            Occupancy Grid Map
+             Live Occupancy Grid Map
 
 ```
 
@@ -103,16 +106,19 @@ The objective is to develop a complete autonomous navigation pipeline similar to
 # ✨ Key Features
 
 
-## 🗺️ Path Planning
+## 🗺️ Global Path Planning
 
-- A* global path planning
-- Efficient obstacle-aware route generation
+Implemented:
+
+- A* global planner
+- Obstacle-aware route generation
 - Goal-directed navigation
 
 
-## 🎯 Local Control
+## 🎯 Dynamic Window Approach (DWA)
 
-Dynamic Window Approach (DWA):
+
+The local controller performs:
 
 - Velocity sampling
 - Trajectory prediction
@@ -121,86 +127,179 @@ Dynamic Window Approach (DWA):
 - Dynamic obstacle avoidance
 
 
-## 👁️ LiDAR Perception
+DWA considers:
 
-Simulated 360° LiDAR system:
-
-- Range measurement
-- Obstacle detection
-- Environment scanning
-- Sensor-based navigation
-
-
-## 🧭 SLAM Mapping
-
-Live occupancy mapping using:
-
-- Odometry prediction
-- Scan matching
-- Log-odds inverse sensor model
-- Occupancy probability update
-
-
-## 📊 Evaluation
-
-Navigation performance measurement:
-
-- Path length
-- Goal error
-- Tracking RMSE
-- Minimum obstacle clearance
-- Mission completion time
-- Replanning events
+- Robot velocity limits
+- Acceleration constraints
+- Goal direction
+- Path alignment
+- Safety clearance
 
 
 ---
 
-# 🎬 Simulation Demo
+## 👁️ LiDAR Perception
 
 
-Add your GitHub video link:
+Simulated 360° LiDAR provides:
+
+- Environment scanning
+- Obstacle detection
+- Range measurement
+- Navigation feedback
+
+
+---
+
+## 🧭 SLAM Occupancy Mapping
+
+
+SLAM pipeline:
 
 
 ```
-https://github.com/user-attachments/assets/YOUR_VIDEO_LINK
+LiDAR Scan
+
+      ↓
+
+Scan Matching
+
+      ↓
+
+Robot Pose Estimation
+
+      ↓
+
+Log-Odds Map Update
+
+      ↓
+
+Occupancy Grid Map
+```
+
+
+Implemented:
+
+- Odometry prediction
+- Scan matching
+- Inverse sensor model
+- Occupancy probability update
+- Live map visualization
+
+
+---
+
+# 🎬 Demo Video
+
+
+## Autonomous SLAM Navigation Simulation
+
+
+▶️ A* Route Animation:
+
+
+```
+astar_route_animation.avi
 ```
 
 
 The simulation demonstrates:
 
 
-- Autonomous navigation
-- LiDAR scanning
-- Dynamic obstacle avoidance
+- A* search process
+- Global path generation
+- DWA local navigation
+- LiDAR perception
 - SLAM map generation
-- Goal reaching behavior
+- Autonomous robot movement
 
 
 ---
 
-# 📸 Results
+# 📸 Simulation Results
 
 
-## Navigation Dashboard
+## Project Preview
 
 
-<img src="results/navigation_dashboard.png" width="900">
+<p align="center">
+
+<img src="./project_preview.png" width="900">
+
+</p>
+
+
+Overview of the complete autonomous navigation framework.
+
 
 
 ---
 
-## Live Occupancy Map
+
+## Final Hybrid Navigation Result
 
 
-<img src="results/slam_map.png" width="900">
+<p align="center">
+
+<img src="./final_hybrid_navigation.png" width="900">
+
+</p>
+
+
+The hybrid navigation result demonstrates:
+
+
+- A* global path
+- DWA local trajectory
+- Robot motion
+- Obstacle avoidance
+- Navigation completion
 
 
 ---
 
-## Performance Analysis
+
+## Live SLAM Occupancy Map
 
 
-<img src="results/performance_graph.png" width="900">
+<p align="center">
+
+<img src="./slam_live_occupancy_map.png" width="900">
+
+</p>
+
+
+The SLAM map demonstrates:
+
+
+- LiDAR-based perception
+- Occupancy grid generation
+- Free space
+- Unknown regions
+- Occupied obstacles
+- Robot localization
+
+
+---
+
+
+## Navigation Performance Analysis
+
+
+<p align="center">
+
+<img src="./hybrid_navigation_performance.png" width="900">
+
+</p>
+
+
+Performance evaluation includes:
+
+
+- Velocity profile
+- Tracking behaviour
+- Navigation stability
+- Motion performance
 
 
 ---
@@ -208,16 +307,18 @@ The simulation demonstrates:
 # 🧠 Algorithms Implemented
 
 
-## 1. A* Global Planner
+## 1. A* Global Path Planner
 
 
-Used for global route generation.
+A* is used for global route generation.
+
 
 Advantages:
 
 - Complete grid search
-- Optimal path generation
+- Optimal path selection
 - Obstacle avoidance
+- Efficient route planning
 
 
 ---
@@ -225,10 +326,10 @@ Advantages:
 ## 2. Dynamic Window Approach (DWA)
 
 
-DWA selects safe velocity commands by evaluating possible robot trajectories.
+DWA selects safe velocity commands from possible robot trajectories.
 
 
-Evaluation criteria:
+Trajectory evaluation:
 
 
 ```
@@ -247,13 +348,21 @@ Obstacle Clearance
 -
 
 Motion Cost
-
 ```
+
+
+Features:
+
+
+- Local obstacle avoidance
+- Velocity optimization
+- Collision prevention
+- Dynamic navigation
 
 
 ---
 
-## 3. Differential Drive Control
+## 3. Differential Drive Robot Model
 
 
 Robot motion model:
@@ -263,15 +372,15 @@ Robot motion model:
 Linear Velocity  → Forward Motion
 
 Angular Velocity → Rotation Control
-
 ```
 
 
-The controller respects:
+The system considers:
 
-- Velocity limits
-- Acceleration constraints
-- Turning radius
+
+- Maximum velocity
+- Acceleration limits
+- Turning constraints
 
 
 ---
@@ -279,11 +388,11 @@ The controller respects:
 ## 4. LiDAR Based SLAM
 
 
-Mapping pipeline:
+Mapping process:
 
 
 ```
-LiDAR Scan
+Sensor Data
 
      ↓
 
@@ -291,16 +400,15 @@ Scan Matching
 
      ↓
 
-Pose Update
+Pose Estimation
 
      ↓
 
-Log-Odds Map Update
+Occupancy Update
 
      ↓
 
-Occupancy Grid
-
+Map Generation
 ```
 
 
@@ -311,7 +419,6 @@ Occupancy Grid
 
 ```
 slam_live_occupancy_map
-
 
 │
 ├── main.m
@@ -333,10 +440,11 @@ slam_live_occupancy_map
 ├── robot
 │   └── robotKinematics.m
 │
-├── results
-│   ├── navigation_dashboard.png
-│   ├── slam_map.png
-│   └── performance_graph.png
+├── project_preview.png
+├── final_hybrid_navigation.png
+├── slam_live_occupancy_map.png
+├── hybrid_navigation_performance.png
+├── astar_route_animation.avi
 │
 ├── PROJECT_REPORT.md
 └── LICENSE
@@ -351,10 +459,12 @@ slam_live_occupancy_map
 
 Software:
 
+
 - MATLAB R2020a or newer
 
 
 Recommended:
+
 
 - MATLAB Robotics Toolbox
 
@@ -362,6 +472,14 @@ Recommended:
 ---
 
 # 🚀 Running the Simulation
+
+
+Clone repository:
+
+
+```bash
+git clone https://github.com/ruddrho/slam_live_occupancy_map.git
+```
 
 
 Open MATLAB:
@@ -374,76 +492,65 @@ main
 
 The simulation generates:
 
+
 - Robot trajectory
-- SLAM occupancy map
-- Performance plots
+- Occupancy map
 - Navigation results
+- Performance analysis
 
 
 ---
 
-# 🔬 Research Contribution
+# 📊 Evaluation Metrics
 
 
-This project demonstrates practical implementation of:
-
-
-- Autonomous mobile robotics
-- SLAM
-- Motion planning
-- Feedback control
-- LiDAR perception
-- Navigation optimization
+| Metric | Description |
+|---|---|
+| Path Length | Total travelled distance |
+| Goal Error | Final position accuracy |
+| Tracking Error | Navigation accuracy |
+| Clearance | Obstacle safety distance |
+| Mission Time | Navigation efficiency |
+| Replanning | Controller response |
 
 
 ---
 
-# 🚀 Future Development Roadmap
+# 🔬 Future Development Roadmap
 
 
-## ROS2 Jazzy Migration
+The next stage is migration from MATLAB simulation to a complete ROS2 robotic platform.
 
 
-The next development phase will convert this MATLAB framework into a complete ROS2 robotic system.
-
-
-Target architecture:
+## ROS2 Jazzy + Gazebo Harmonic Architecture
 
 
 ```
 ROS2 Jazzy
 
-      |
-
       ↓
 
 Gazebo Harmonic Simulation
 
-      |
+      ↓
+
+URDF Robot Model
 
       ↓
 
-Robot URDF + ros2_control
-
-      |
+ros2_control
 
       ↓
 
 LiDAR + IMU + Encoder
 
-      |
-
       ↓
 
 SLAM Toolbox
 
-      |
-
       ↓
 
 Nav2 Navigation Stack
-
-      |
 
       ↓
 
@@ -452,10 +559,10 @@ Real Robot Deployment
 ```
 
 
-Future upgrades:
+Future improvements:
 
 
-- ROS2 C++ nodes
+- ROS2 C++ implementation
 - Gazebo Harmonic simulation
 - Nav2 integration
 - SLAM Toolbox
@@ -466,7 +573,18 @@ Future upgrades:
 
 ---
 
-# 📚 Academic Relevance
+# 🎓 Academic Relevance
+
+
+This project demonstrates:
+
+
+- Autonomous mobile robotics
+- Motion planning
+- Feedback control
+- LiDAR perception
+- SLAM implementation
+- Navigation optimization
 
 
 Suitable for:
@@ -475,16 +593,6 @@ Suitable for:
 - Robotics Master's Portfolio
 - Control Systems Research
 - Autonomous Systems Development
-
-
-Relevant fields:
-
-
-- Mobile Robot Navigation
-- SLAM
-- Robot Control
-- Motion Planning
-- Sensor Fusion
 
 
 ---
@@ -515,13 +623,15 @@ This project is licensed under the MIT License.
 # 👨‍💻 Author
 
 
-**Ruddrho Mollik**
+## Ruddrho Mollik
 
 
 Research Interests:
 
-- Autonomous Robots
+
+- Autonomous Mobile Robots
 - SLAM
 - Motion Planning
 - Control Systems
 - Robotics Software
+- Autonomous Navigation
