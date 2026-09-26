@@ -1,30 +1,23 @@
 <p align="center">
 
-<img src="./project_preview.png" width="850">
-
-</p>
-
-
-<h1 align="center">
-Hybrid LiDAR Navigation and Live Occupancy Mapping
-</h1>
-
-
-<p align="center">
-
-A MATLAB-Based Autonomous Mobile Robot Navigation and SLAM Framework
-
-</p>
-
-
-<p align="center">
-
 ![MATLAB](https://img.shields.io/badge/MATLAB-R2020a+-orange)
 ![Robotics](https://img.shields.io/badge/Field-Autonomous%20Robotics-blue)
 ![SLAM](https://img.shields.io/badge/SLAM-Occupancy%20Mapping-green)
 ![Control](https://img.shields.io/badge/Control-DWA%20Navigation-red)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 
+</p>
+
+<p align="center">
+  <img src="./combined_astar_navigation.gif" width="1000" alt="Hybrid LiDAR Navigation and Live Occupancy Mapping">
+</p>
+
+<h1 align="center">
+Hybrid LiDAR Navigation and Live Occupancy Mapping
+</h1>
+
+<p align="center">
+  <b>A MATLAB-Based Autonomous Mobile Robot Navigation and SLAM Framework</b>
 </p>
 
 
